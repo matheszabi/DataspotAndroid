@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <EditTextPreference
+        android:defaultValue="http://vps.mathesoft.ro/dataspot_webshop/"
+        android:inputType="textUri"
+        android:key="baseUrl"
+        android:title="Web services base  URL" />
+</PreferenceScreen>

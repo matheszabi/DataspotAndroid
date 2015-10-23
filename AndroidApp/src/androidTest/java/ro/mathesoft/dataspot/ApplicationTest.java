@@ -2,14 +2,10 @@ package ro.mathesoft.dataspot;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;
-import android.text.TextUtils;
-
-import org.json.JSONException;
 
 import java.util.concurrent.CountDownLatch;
 
 import ro.mathesoft.dataspot.data.CategoryTreeNode;
-import ro.mathesoft.dataspot.jsonparser.CategoriesJsonParser;
 import ro.mathesoft.dataspot.networktask.GetCategoriesTask;
 
 /**
