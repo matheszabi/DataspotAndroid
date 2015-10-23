@@ -5,4 +5,5 @@ package ro.mathesoft.dataspot.settings;
  */
 public interface ISettingsKey {
     String KEY_BASE_URL = "baseUrl";
+    String KEY_PHONE_NR = "phoneNr";
 }

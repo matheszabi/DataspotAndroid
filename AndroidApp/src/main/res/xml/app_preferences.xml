@@ -4,5 +4,13 @@
         android:defaultValue="http://vps.mathesoft.ro/dataspot_webshop/"
         android:inputType="textUri"
         android:key="baseUrl"
-        android:title="Web services base  URL" />
+        android:title="Web service URL" />
+
+
+    <EditTextPreference
+        android:defaultValue="0357.442.442"
+        android:inputType="text|phone"
+        android:key="phoneNr"
+        android:title="Nr. Telefon" />
+
 </PreferenceScreen>
