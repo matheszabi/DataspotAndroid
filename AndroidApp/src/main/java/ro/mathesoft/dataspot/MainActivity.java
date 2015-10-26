@@ -12,6 +12,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -54,12 +55,13 @@ public class MainActivity extends AppCompatActivity
 
         // load the settings and his listener
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-
         SharedPreferenceChangeListener sharedPreferenceChangeListener = new SharedPreferenceChangeListener(prefs);
         sharedPreferenceChangeListener.setTextViewPhone(tvPhone);
         sharedPreferenceChangeListener.reloadPhoneNumber();
-
         prefs.registerOnSharedPreferenceChangeListener(sharedPreferenceChangeListener);
+
+        drawer.openDrawer(Gravity.LEFT);
+
     }
 
     @Override
