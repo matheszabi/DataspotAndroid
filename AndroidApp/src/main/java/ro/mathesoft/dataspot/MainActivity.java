@@ -18,12 +18,16 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import ro.mathesoft.dataspot.fragments.CategoryItemFragment;
 import ro.mathesoft.dataspot.hacking.Hacking;
+import ro.mathesoft.dataspot.mainactivity.NavigationCategoryClicked;
 import ro.mathesoft.dataspot.settings.SettingsActivity;
 import ro.mathesoft.dataspot.settings.SharedPreferenceChangeListener;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener, CategoryItemFragment.OnCategoryItemSelectionListener {
+
+    //private RelativeLayout rlContentMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -105,7 +109,8 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_category) {
-            // Handle the category action
+            NavigationCategoryClicked.handleCategoryNavigationClick(this);
+
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
@@ -121,5 +126,10 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onItemSelected(int catId) {
+        // handle the category item slection: load products by category
     }
 }

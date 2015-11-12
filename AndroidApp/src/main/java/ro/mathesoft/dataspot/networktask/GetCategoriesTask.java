@@ -3,7 +3,6 @@ package ro.mathesoft.dataspot.networktask;
 import android.os.AsyncTask;
 import android.util.Log;
 
-
 import org.json.JSONException;
 
 import java.io.BufferedReader;
@@ -43,6 +42,14 @@ public class GetCategoriesTask extends AsyncTask<String, Integer, CategoryTreeNo
             contentCategories = getJson(params[0] + "GetCategories.php");
             // parse the String to JSONArray and get the ArrayList<Category>:
             listCategory  = CategoriesJsonParser.parse(contentCategories);
+
+            boolean logCategories = true;// switchj to false to not have the listing
+            if (logCategories) {
+                for (Category category : listCategory) {
+                    Log.d("GetCategoriesTask", category.getCatName());
+                }
+            }
+
 
             // can be optimized the SQL at PHP to give all of the results, but not it is easy to switch between search
 
